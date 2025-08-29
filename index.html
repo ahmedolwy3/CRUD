@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>crud</title>
+</head>
+
+<body>
+    <div class="crud">
+
+        <div class="head">
+            <h2>CRUD</h2>
+            <p>PRODUCT MANAGEMENT SYSTEM</p>
+        </div>
+
+        <div class="inputs">
+            <input placeholder="tittle" type="text" id="tittle">
+            <div class="price">
+                <input onkeyup="getTotal()" type="number" placeholder="price" id="price">
+                <input onkeyup="getTotal()" type="number" placeholder="taxes" id="taxes">
+                <input onkeyup="getTotal()" type="number" placeholder="ads" id="ads">
+                <input onkeyup="getTotal()" type="number" placeholder="discount" id="discount">
+                <small id="total"></small>
+            </div>
+            <input type="number" placeholder="count" id="count">
+            <input type="text" placeholder="category" id="category">
+            <button id="submit">create</button>
+
+        </div>
+
+
+
+        <div class="outputs">
+            <div class="searchblock">
+                <input type="text" id="search" placeholder="search" >
+                <div class="searchbtn">
+                    <button id="searchTittle">Search by Tittle</button>
+                    <button id="searchCategory">Search by Category</button>
+                </div>
+            </div>
+        </div>
+
+         <table>
+            <tr>
+                <th>id</th>
+                <th>tittle</th>
+                <th>price</th>
+                <th>taxes</th>
+                <th>ads</th>
+                <th>discount</th>
+                <th>total</th>
+                <th>category</th>
+                <th>update</th>
+                <th>delete</th>
+            </tr>
+
+            <tbody>
+
+                <tr>
+                    <td>1</td>
+                    <td>samsung</td>
+                    <td>5000</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>5200</td>
+                    <td>mobile</td> 
+                    <td><button id="update">update</button></td>
+                    <td><button id="delete">delete</button></td>
+
+                </tr>
+
+                 <tr>
+                    <td>1</td>
+                    <td>samsung</td>
+                    <td>5000</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>5200</td>
+                    <td>mobile</td> 
+                    <td><button id="update">update</button></td>
+                    <td><button id="delete">delete</button></td>
+
+                </tr>
+
+                 <tr>
+                    <td>1</td>
+                    <td>samsung</td>
+                    <td>5000</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>5200</td>
+                    <td>mobile</td> 
+                    <td><button id="update">update</button></td>
+                    <td><button id="delete">delete</button></td>
+
+                </tr>
+
+                
+                 <tr>
+                    <td>1</td>
+                    <td>samsung</td>
+                    <td>5000</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>5200</td>
+                    <td>mobile</td> 
+                    <td><button id="update">update</button></td>
+                    <td><button id="delete">delete</button></td>
+
+                </tr>
+
+
+            </tbody>
+         </table>
+    </div>
+
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
