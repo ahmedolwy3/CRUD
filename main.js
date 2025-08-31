@@ -47,7 +47,16 @@ function getTotal(){
         count:count.value,
         category:category.value,
     }
-    dataPro.push(newPro);
+
+    if(newPro.count > 1){
+        for(let i=0; i<newPro.count; i++){
+            dataPro.push(newPro);
+        }
+    }else{
+        dataPro.push(newPro);
+    }
+
+   
     localStorage.setItem('product', JSON.stringify(dataPro) );
     console.log(dataPro);
 
@@ -85,7 +94,7 @@ function showData(){
                     <td>${dataPro[i].total}</td>
                     <td>${dataPro[i].category}</td> 
                     <td><button id="update">update</button></td>
-                    <td><button id="delete">delete</button></td>
+                    <td><button onclick="deleteData(${i})" id="delete">delete</button></td>
 
                 </tr>
         `
@@ -93,12 +102,40 @@ function showData(){
     }
 
     document.getElementById("tbody").innerHTML = table;
+    let btnDelete = document.getElementById("deleteAll");
+    if(dataPro.length > 0){
+        btnDelete.innerHTML = `
+        <button onclick="deleteAll()" > Delete All (${dataPro.length })</button>
+        `
+
+}else{
+    btnDelete.innerHTML = '';
+}
 
 }
 showData();
 
-//count//
+
+
 //delete//
+
+
+ function deleteData(i){
+    dataPro.splice(i,1);
+    localStorage.product = JSON.stringify(dataPro);
+    showData();
+    
+ }
+
+
+ function deleteAll() {
+    localStorage.clear();
+    dataPro.splice(0);
+    showData();
+ }
+
+//count// 
+
 //update//  
 //search//      
 //clean data//

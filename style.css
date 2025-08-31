@@ -78,6 +78,15 @@ button:hover{
 
 }
 
+#deleteAll {
+    margin: 20px 0;
+}
+
+#deleteAll button{
+    width: 100%;
+    background: rgb(151, 12, 2);
+}
+
 table{
     width: 100%;
     text-align: center;
