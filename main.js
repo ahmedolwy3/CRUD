@@ -93,8 +93,12 @@ function showData(){
                     <td>${dataPro[i].discount}</td>
                     <td>${dataPro[i].total}</td>
                     <td>${dataPro[i].category}</td> 
-                    <td><button id="update">update</button></td>
-                    <td><button onclick="deleteData(${i})" id="delete">delete</button></td>
+                    <td>
+                    <button onclick="updateData(${i})" id="update">update</button>
+                    </td>
+                    <td>
+                    <button onclick="deleteData(${i})" id="delete">delete</button>
+                    </td>
 
                 </tr>
         `
@@ -137,5 +141,21 @@ showData();
 //count// 
 
 //update//  
+
+function updateData(i){
+  tittle.value = dataPro[i].tittle;
+  price.value = dataPro[i].price;
+  taxes.value = dataPro[i].taxes;
+  ads.value = dataPro[i].ads;
+  discount.value = dataPro[i].discount;
+  category.value = dataPro[i].category;
+    getTotal();
+    count.style.display = 'none';
+    submit.innerHTML = 'Update';
+
+}
+
+
+
 //search//      
 //clean data//
