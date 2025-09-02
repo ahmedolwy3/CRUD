@@ -47,9 +47,12 @@ function getTotal(){
         discount:discount.value,
         total:total.innerHTML,
         count:count.value,
-        category:category.value.tolowerCase(),
+        category:category.value.toLowerCase(),
     }
-     
+     if(tittle.value !='' 
+        && price.value!=''
+         && category.value !='' &&
+        newPro.count < 100 ){
      if(mood === 'create'){
            if(newPro.count > 1){
         for(let i=0; i<newPro.count; i++){
@@ -58,12 +61,14 @@ function getTotal(){
     }else{
         dataPro.push(newPro);
     }
-    } else{
+    }else{
     dataPro[tmp] = newPro;
     mood = 'create';
     submit.innerHTML = 'Create';
     count.style.display = 'block';
-}
+ }
+     clearData();
+     }
 
 
  
@@ -72,7 +77,7 @@ function getTotal(){
     localStorage.setItem('product', JSON.stringify(dataPro) );
 
 
-    clearData();
+    
     showData();
     
  }
@@ -98,7 +103,7 @@ function showData(){
     for(let i=0; i<dataPro.length; i++){
         table += `
               <tr>
-                    <td>${i}</td>
+                    <td>${i+1}</td>
                     <td>${dataPro[i].tittle}</td>
                     <td>${dataPro[i].price}</td>
                     <td>${dataPro[i].taxes}</td>
